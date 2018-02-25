@@ -17,4 +17,8 @@ class Boat < ActiveRecord::Base
 
   def self.last_three_alphabetically
     self.all.sort_by(:name)[0-2]
+  end
+
+  def self.without_a_captain
+    self.find_all(|ship|ship.captain == nil)
 end
