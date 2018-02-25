@@ -31,12 +31,12 @@ class Boat < ActiveRecord::Base
     joins(:classifications).group("boats.id").having("COUNT(*) = 3").select("boats.*")
   end
 
-  def self.non_sailboats
-    where("id NOT IN (?)", self.sailboats.pluck(:id))
-  end
-
-  def self.longest
-    order('length DESC').first
-  end
+  # def self.non_sailboats
+  #   where("id NOT IN (?)", self.sailboats.pluck(:id))
+  # end
+  # 
+  # def self.longest
+  #   order('length DESC').first
+  # end
 
 end
