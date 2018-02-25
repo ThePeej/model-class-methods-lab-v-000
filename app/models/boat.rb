@@ -20,15 +20,15 @@ class Boat < ActiveRecord::Base
   end
 
   def self.without_a_captain
-    self.all.find_all{|ship|ship.captain == nil}
+    self.all.find_all{|boat|boat.captain == nil}
   end
 
   def self.sailboats
-    self.all.find_all{|ship|ship.classifications.include?("sailboat")}
+    self.all.find_all{|boat|boat.classifications.include?("sailboat")}
   end
 
   def self.with_three_classifications
-    self.all.find_all{|ship|ship.classifications.count == 3}
+    self.all.find_all{|boat|boat.classifications.count == 3}
   end
 
 end
