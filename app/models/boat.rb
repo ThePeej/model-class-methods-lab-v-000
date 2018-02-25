@@ -16,7 +16,7 @@ class Boat < ActiveRecord::Base
   end
 
   def self.last_three_alphabetically
-    all.sort_by(:name).limit(2)
+    all.order(:name).limit(3)
   end
 
   def self.without_a_captain
