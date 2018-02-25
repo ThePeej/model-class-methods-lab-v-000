@@ -34,7 +34,7 @@ class Boat < ActiveRecord::Base
   # def self.non_sailboats
   #   where("id NOT IN (?)", self.sailboats.pluck(:id))
   # end
-  # 
+  #
   # def self.longest
   #   order('length DESC').first
   # end
