@@ -20,5 +20,9 @@ class Boat < ActiveRecord::Base
   end
 
   def self.without_a_captain
-    self.find_all(|ship|ship.captain == nil)
+    self.all.find_all{|ship|ship.captain == nil}
+  end
+
+  def self.sailboats
+    self.all.find_all{|ship|ship.classification.include?("sailboat")}
 end
