@@ -4,7 +4,7 @@ class Boat < ActiveRecord::Base
   has_many    :classifications, through: :boat_classifications
 
   def self.first_five
-    where("id <= ?", 5)
+    all.limit(4)
   end
 
   def self.dinghy
@@ -16,7 +16,7 @@ class Boat < ActiveRecord::Base
   end
 
   def self.last_three_alphabetically
-    self.all.sort_by(:name).limit(2)
+    all.sort_by(:name).limit(2)
   end
 
   def self.without_a_captain
