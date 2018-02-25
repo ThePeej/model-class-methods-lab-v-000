@@ -16,5 +16,5 @@ class Boat < ActiveRecord::Base
   end
 
   def self.last_three_alphabetically
-    self.all.sort_by(:name)
+    self.all.sort_by(:name)[0-2]
 end
