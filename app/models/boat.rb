@@ -26,4 +26,9 @@ class Boat < ActiveRecord::Base
   def self.sailboats
     self.all.find_all{|ship|ship.classification.include?("sailboat")}
   end
+
+  def self.with_three_classifications
+    self.all.find_all{|ship|ship.classification.count == 3}
+  end
+
 end
