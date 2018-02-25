@@ -10,5 +10,4 @@ class Classification < ActiveRecord::Base
     Boat.longest.classifications
   end
 
-  
 end
