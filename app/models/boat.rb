@@ -25,4 +25,5 @@ class Boat < ActiveRecord::Base
 
   def self.sailboats
     self.all.find_all{|ship|ship.classification.include?("sailboat")}
+  end
 end
